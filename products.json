@@ -1,0 +1,92 @@
+[
+	{
+		"name" : "internet-10-mb",
+		"group" : "internet",
+		"supergroup" : "internet",
+		"enables" : ["internet-bonus-pack"]
+	},
+	{
+		"name" : "internet-20-mb",
+		"group" : "internet",
+		"supergroup" : "internet",
+		"enables" : ["internet-bonus-pack"]
+	},
+	{
+		"name" : "internet-30-mb",
+		"group" : "internet",
+		"supergroup" : "internet",
+		"enables" : ["internet-bonus-pack"]
+	},
+	{
+		"name" : "internet-bonus-pack",
+		"supergroup" : "internet"
+	},
+	{
+		"name" : "tv-regular",
+		"group" : "tv",
+		"supergroup" : "tv",
+		"requires-group" : "hardware-1"
+	},
+	{
+		"name" : "tv-unlimited",
+		"group" : "tv",
+		"supergroup" : "tv",
+		"requires-group" : "hardware-1"
+	},
+	{
+		"name" : "snooker-channel",
+		"group" : "sports-channels",
+		"supergroup" : "tv"
+	},
+	{
+		"name" : "billiards-channel",
+		"group" : "sports-channels",
+		"supergroup" : "tv"
+	},
+	{
+		"name" : "snooker-and-billiards-channel",
+		"group" : "sports-channels",
+		"supergroup" : "tv"
+	},
+	{
+		"name" : "decoder-1-no-recorder",
+		"group" : "hardware-1",
+		"supergroup" : "tv",
+		"enables-group" : "hardware-2"
+	},
+	{
+		"name" : "decoder-1-recorder",
+		"group" : "hardware-1",
+		"supergroup" : "tv",
+		"enables-group" : "hardware-2"
+	},
+	{
+		"name" : "decoder-2-no-recorder",
+		"group" : "hardware-2",
+		"supergroup" : "tv",
+		"enables" : "decoder-3",
+		"disabled" : true
+	},
+	{
+		"name" : "decoder-2-recorder",
+		"group" : "hardware-2",
+		"supergroup" : "tv",
+		"enables" : "decoder-3",
+		"disabled" : true
+	},
+	{
+		"name" : "decoder-3",
+		"supergroup" : "tv",
+		"disabled" : true
+	},
+	{
+		"name" : "telephony-regular",
+		"group" : "phone",
+		"supergroup" : "phone"
+	},
+	{
+		"name" : "telephony-unlimited",
+		"group" : "phone",
+		"supergroup" : "phone"
+	}
+]

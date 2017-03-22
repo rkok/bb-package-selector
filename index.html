@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+
+<!-- Load bundled libraries from js/ -->
+<script src="all.js"></script>
+
+<!-- Styling for default view -->
+<style>
+    .supergroup { font-weight: bold; }
+    .product { width: 12px; height: 12px; display: inline-block; margin-right: 5px; }
+    .product:hover { cursor: pointer }
+    .product.disabled { background-color: #ccc; }
+    .product.disabled:hover { cursor: default }
+    .product.off { background-color: #f00; }
+    .product.on { background-color: #C6E746; }
+</style>
+
+<!-- Load products.json, render default view, initialize PackageSelector -->
+<script>
+  window.onload = () => {
+    fetch('products.json')
+      .then(response => response.json())
+      .then(products => {
+        let lastSgrp;
+
+        products.forEach(product => {
+          if(product.supergroup && product.supergroup !== lastSgrp) {
+            const sgroup = document.createElement('p');
+            sgroup.className = 'supergroup';
+            sgroup.innerText = product.supergroup;
+            document.body.appendChild(sgroup);
+            lastSgrp = product.supergroup;
+          }
+
+          const state = (product.disabled || product.supergroup !== product.group) ? 'disabled' : 'off';
+
+          const productSpan = document.createElement('span');
+          productSpan.className = `product ${state}`;
+          productSpan.id = product.name;
+
+          const productLabel = document.createElement('label');
+          productLabel.innerText = product.name;
+
+          const productDiv = document.createElement('div');
+          productDiv.appendChild(productSpan);
+          productDiv.appendChild(productLabel);
+
+          document.body.appendChild(productDiv);
+        });
+
+        new PackageSelector(products);
+      });
+  }
+</script>
+</body>
+</html>

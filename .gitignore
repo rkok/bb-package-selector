@@ -1,0 +1,4 @@
+.idea
+all.js
+node_modules
+*.log

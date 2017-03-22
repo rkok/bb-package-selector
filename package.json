@@ -1,0 +1,20 @@
+{
+  "name": "bb-package-selector",
+  "version": "1.0.0",
+  "description": "Generic broadband provider package selector",
+  "scripts": {
+    "build": "grunt",
+    "build-watch": "grunt watch",
+    "start": "npm run build && npm run start-server",
+    "start-server": "http-server -o -p 10203"
+  },
+  "author": "rebootr <info@rebootr.nl>",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "http-server": "^0.9.0"
+  }
+}
